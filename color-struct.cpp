@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -10,6 +11,9 @@ struct Color {
 };
 
 int main() {
+
+    // sets seed to current time, ensuring different outpus for each run
+    srand(time(0));
 
     vector<Color> colorsVector;
 
@@ -25,12 +29,25 @@ int main() {
         colorsVector.push_back(newColor);
     }
 
+    // sets up labels for display table
+    cout << setw(10) << "Color#"
+            << setw(10) << "R value"
+            << setw(10) << "G value"
+            << setw(10) << "B value"
+            << endl;
+    cout << setw(10) << "------"
+            << setw(10) << "-------"
+            << setw(10) << "-------"
+            << setw(10) << "-------"
+            << endl;
+
     // outputs all n elements of the vector
     for (int i = 0; i < n; ++i) {
-        cout << "Red: " << colorsVector.at(i).red << endl;
-        cout << "Blue: " << colorsVector.at(i).blue << endl;
-        cout << "Green: " << colorsVector.at(i).green << endl;
-        cout << endl;
+        cout << setw(8) << i
+            << setw(10) << colorsVector.at(i).red
+            << setw(10) << colorsVector.at(i).green
+            << setw(10) << colorsVector.at(i).blue
+            << endl;
     }
 }
 
