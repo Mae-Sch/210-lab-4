@@ -18,9 +18,13 @@ int main() {
     cout << "blue value is:";
     cin >> newColor.blue;
 
+    vector<Color> colorsVector = {newColor};
+
     cout << "color has the following values:\n";
-    cout << "Red: " << newColor.red;
-    cout << "\nGreen: " << newColor.green;
-    cout << "\nBlue: " << newColor.blue << endl;
+    cout << "Red: " << colorsVector.at(0).red;
+    cout << "\nGreen: " << colorsVector.at(0).green;
+    cout << "\nBlue: " << colorsVector.at(0).blue << endl;
+
+
 }
 
