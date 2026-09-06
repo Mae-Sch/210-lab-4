@@ -10,21 +10,27 @@ struct Color {
 };
 
 int main() {
-    Color newColor;
-    cout << "red value is:";
-    cin >> newColor.red;
-    cout << "geen value is:";
-    cin >> newColor.green;
-    cout << "blue value is:";
-    cin >> newColor.blue;
 
-    vector<Color> colorsVector = {newColor};
+    vector<Color> colorsVector;
 
-    cout << "color has the following values:\n";
-    cout << "Red: " << colorsVector.at(0).red;
-    cout << "\nGreen: " << colorsVector.at(0).green;
-    cout << "\nBlue: " << colorsVector.at(0).blue << endl;
+    // random number between 25 and 50, which determines how many colors will be in the vector
+    int n = (rand()%26) + 25;
 
+    // populates the vector with n amount of random colors
+    for (int i = 0; i < n; ++i) {
+        Color newColor;
+        newColor.red = (rand()%256);
+        newColor.green = (rand()%256);
+        newColor.blue = (rand()%256);
+        colorsVector.push_back(newColor);
+    }
 
+    // outputs all n elements of the vector
+    for (int i = 0; i < n; ++i) {
+        cout << "Red: " << colorsVector.at(i).red << endl;
+        cout << "Blue: " << colorsVector.at(i).blue << endl;
+        cout << "Green: " << colorsVector.at(i).green << endl;
+        cout << endl;
+    }
 }
 
